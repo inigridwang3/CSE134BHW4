@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <nav>
+        <ul>
+            <!-- This link takes you back to index.html -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="experiments.html">Experiments</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+    </nav>
+    <title>Inigrid Wang - Creative Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, header, nav, main, footer, section, article, div, fieldset, legend, form, dialog, template {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 5px;
+        }
+        creative-badge {
+            display: block;
+            border: 2px dashed #333;
+            padding: 8px;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        // Placeholder script for analytics or allowed tags as per requirements
+        console.log("Analytics placeholder script loaded.");
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Inigrid Wang</h1>
+        <p>Software Engineer targeting Creative & Entertainment Roles (e.g., Blizzard, Casetify)</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to My Creative Tech Portfolio</h2>
+            <p>I build immersive graphics engines, interactive entertainment software, and high-performance cross-platform tools.</p>
+            <creative-badge>Status: Open for Software Engineering Opportunities</creative-badge>
+        </section>
+
+        <article>
+            <h3>Featured Highlight</h3>
+            <p>Passionate about blending computer science with digital art, game physics, and hardware customization.</p>
+            <picture>
+                <source srcset="https://placehold.co/400x300/png?text=Creative+Tech+Large" media="(min-width: 800px)">
+                <img src="https://placehold.co/300x200/png?text=Creative+Tech" alt="Showcase graphic">
+            </picture>
+            <br>
+            <span>Specialization: Real-time Rendering & Shaders</span>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Inigrid Wang. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom Element #2 Definition: Prints Hello World to console without modifying DOM -->
+    <script>
+        class HelloConsole extends HTMLElement {
+            connectedCallback() {
+                console.log("Hello World!");
+            }
+        }
+        customElements.define('hello-console', HelloConsole);
+    </script>
+    <hello-console></hello-console>
+</body>
+</html>

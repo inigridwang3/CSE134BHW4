@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>My Book Recommendations</h1>
+        <p>Welcome to my personal reading list! Here are books I have read and books I plan to read.</p>
+    </header>
+
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experiments.html">Experiments</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+    </nav>  
+
+    <nav>
+        <h2>Quick Links</h2>
+        <ul>
+            <li><a href="#read">Books I Have Read</a></li>
+            <li><a href="#toread">Books I Plan to Read</a></li>
+            <li><a href="#add">Add a Book</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Books I Have Read Section -->
+        <section id="read">
+            <h2>Books I Have Read</h2>
+            
+            <article>
+                <h3>And Then There Were None</h3>
+                <p><strong>Author:</strong> Agatha Christie</p>
+                <p><strong>Genre:</strong> Classic Mystery</p>
+                <p><strong>My Thoughts:</strong> The best Agatha Christie novel ever written.</p>
+                <hr>
+            </article>
+
+            <article>
+                <h3>From Zero to One</h3>
+                <p><strong>Author:</strong> Peter Thiel</p>
+                <p><strong>Genre:</strong> Business </p>
+                <p><strong>My Thoughts:</strong> Information is straight to the point, like reading condensed notes on a very valuable business lecture.</p>
+                <hr>
+            </article>
+        </section>
+
+        <!-- Books I Plan to Read Section -->
+        <section id="toread">
+            <h2>Books I Plan to Read</h2>
+            
+            <article>
+                <h3>The Black Swan</h3>
+                <p><strong>Author:</strong> Nassim Nicholas Taleb</p>
+                <p><strong>Genre:</strong> Nonfiction</p>
+                <p><strong>Why I want to read it:</strong> Discusses the idea of risk with concrete examples, which can be reflected in real life decisions.</p>
+                <hr>
+            </article>
+
+            <article>
+                <h3>The Measure of Civilization</h3>
+                <p><strong>Author:</strong> Ian Morris</p>
+                <p><strong>Genre:</strong> Nonfiction </p>
+                <p><strong>Why I want to read it:</strong> As its subtitle suggests, the book discusses the question "How Social Development Decides the Fate of Nations"</p>
+                <hr>
+            </article>
+        </section>
+
+        <!-- Add a Book Section (HTML form demo) -->
+        <section id="add">
+            <h2>Suggest a Book</h2>
+            <form>
+                <p>
+                    <label for="book-title">Book Title:</label><br>
+                    <input type="text" id="book-title" name="title" required>
+                </p>
+                <p>
+                    <label for="book-author">Author:</label><br>
+                    <input type="text" id="book-author" name="author" required>
+                </p>
+                <p>
+                    <label for="book-status">Category:</label><br>
+                    <select id="book-status" name="status">
+                        <option value="read">Already Read</option>
+                        <option value="toread">Plan to Read</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="book-notes">Notes / Review:</label><br>
+                    <textarea id="book-notes" name="notes" rows="4" cols="30"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Submit Book</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

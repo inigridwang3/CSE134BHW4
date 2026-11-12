@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inigrid Wang- Creative Software Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Inigrid Wang-, software engineer specializing in creative tech, entertainment, and interactive software development.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Base page structure border rule permitted by assignment */
+        body {
+            border: 2px solid #333333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+        creative-badge {
+            display: block;
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px dashed #666666;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script>
+        // Custom element #1: Console message custom element
+        class HelloConsole extends HTMLElement {
+            connectedCallback() {
+                console.log("Hello World!");
+            }
+        }
+        customElements.define('hello-console', HelloConsole);
+
+        // Custom element #2: Semantic CSS custom element definition
+        class CreativeBadge extends HTMLElement {}
+        customElements.define('creative-badge', CreativeBadge);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Inigrid Wang</h1>
+        <p>Software Engineer | Interactive & Creative Systems</p>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="books.html">Readings</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to My Creative Tech Portfolio</h2>
+            <p>Targeting software and engineering roles at forward-thinking creative and entertainment companies like <strong>Casetify</strong> and <strong>Blizzard</strong>.</p>
+            <creative-badge>
+                <span>Specialized in creative coding, interactive web applications, and engaging gameplay systems.</span>
+            </creative-badge>
+        </section>
+
+        <article>
+            <h3>Featured Highlight: Project 1 (AquaQuest - Water-Saving Educational Game)</h3>
+            <p>Our featured software project is an interactive web-based educational game designed to teach sustainable water conservation through gamified resource management.</p>
+            <p><a href="portfolio.html">View full project details in the Portfolio section &rarr;</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Inigrid Wang. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom element instance that prints Hello World to console -->
+    <hello-console></hello-console>
+</body>
+</html>
