@@ -1,0 +1,281 @@
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES (:root) - Professional Bright Theme
+   ========================================================================== */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --bg-color: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  
+  --accent-primary: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.12);
+  --border-color: #e2e8f0;
+  
+  --site-max-width: 1100px;
+  --spacing-unit: 1.5rem;
+}
+
+/* ==========================================================================
+   BASE & RESET STYLES (Graceful Degradation Support)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   SHARED LAYOUT & STRUCTURE
+   ========================================================================== */
+.site-wrapper {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 2.5rem var(--spacing-unit);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+header h1 {
+  font-size: 2.25rem;
+  margin: 0 0 0.35rem 0;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+header p {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+/* Flexbox Navigation */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+header nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   SELECTORS IN CONTEXT
+   ========================================================================== */
+
+/* 1. Attribute Selector: Target external or secure links with target="_blank" */
+a[target="_blank"] {
+  color: var(--accent-primary);
+  border-bottom: 1px dashed var(--accent-primary);
+}
+
+/* 2. Descendant Combinator: Styles all paragraph elements living inside a card */
+.project-card p {
+  font-size: 0.975rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* 3. Child Combinator (>): Direct child paragraphs inside main content wrapper */
+main > p {
+  font-size: 1.125rem;
+  max-width: 75ch;
+  color: var(--text-muted);
+}
+
+/* 4. Adjacent Sibling Combinator (+): Form label immediately following an input */
+input + label, textarea + label {
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+/* 5. Subsequent Sibling Combinator (~): Headings that follow an introduction banner */
+.intro-banner ~ h3 {
+  margin-top: 3rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   MAIN CONTENT & RESPONSIVE GRID LAYOUTS
+   ========================================================================== */
+main {
+  flex: 1;
+}
+
+main h2 {
+  font-size: 1.75rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+/* Grid Layout for Portfolios and Cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+}
+
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 30px var(--accent-glow);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--text-main);
+  font-size: 1.25rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   INTERACTIVE ELEMENTS, HOVER & FOCUS STATES
+   ========================================================================== */
+a:hover {
+  color: var(--accent-primary);
+  background-color: var(--accent-glow);
+}
+
+/* Visible, Accessible Focus States */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Button with 'em' unit padding scaling context */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6em 1.4em; /* Uses em relative to font-size for local context scaling */
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  opacity: 1;
+}
+
+/* Forms layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 600px;
+  background-color: var(--bg-surface);
+  padding: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+input, textarea {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+  .site-wrapper {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
