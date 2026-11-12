@@ -279,3 +279,169 @@ input:focus, textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   PART 2: FORM VALIDATION STYLING
+   ========================================================================== */
+
+.form-instructions {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.required-indicator {
+    color: #e11d48;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Prevent layout shift by keeping borders/outlines consistent in size */
+input, textarea {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Base focus state */
+input:focus, textarea:focus {
+    background-color: #ffffff;
+    border-color: var(--accent-primary);
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* User-invalid state: triggers after interaction/submission attempt, avoiding page-load errors */
+input:user-invalid, 
+textarea:user-invalid {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 1px #e11d48;
+}
+
+/* User-valid state: provides subtle positive feedback */
+input:user-valid, 
+textarea:user-valid {
+    border-color: #10b981;
+}
+
+/* ==========================================================================
+   PART 3: JAVASCRIPT ENHANCEMENT STYLES
+   ========================================================================== */
+.field-error {
+    color: #e11d48;
+    font-size: 0.875rem;
+    margin-top: 0.3rem;
+    font-weight: 500;
+}
+
+.field-info {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+}
+
+.field-info.warning {
+    color: #d97706; /* Amber warning near limit */
+    font-weight: 500;
+}
+
+.field-info.limit {
+    color: #e11d48; /* Red alert at max limit */
+    font-weight: 600;
+}
+
+.error-summary {
+    color: #e11d48;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+input.invalid, textarea.invalid {
+    border-color: #e11d48 !important;
+    background-color: #fff1f2 !important;
+}
+
+input.valid, textarea.valid {
+    border-color: #10b981 !important;
+}
+
+/* ==========================================================================
+   PART 4.1: THEME SWITCHING (CSS Custom Properties)
+   ========================================================================== */
+
+/* Default Light Theme Variables */
+:root {
+  --bg-color: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --accent-primary: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.12);
+  --border-color: #e2e8f0;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-primary: #818cf8;
+  --accent-glow: rgba(129, 140, 248, 0.2);
+  --border-color: #334155;
+}
+
+/* Hide theme control by default until JS initializes it */
+.js-theme-toggle {
+  display: none;
+}
+
+/* Shown only when JS is active */
+.js .js-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.js-theme-toggle:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--accent-glow);
+}
+
+
+/* ==========================================================================
+   PART 4.2: VIEW TRANSITIONS API & REDUCED MOTION
+   ========================================================================== */
+
+/* Enable automatic cross-document (MPA) view transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* Respect user motion preferences by disabling animations when reduced motion is requested */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

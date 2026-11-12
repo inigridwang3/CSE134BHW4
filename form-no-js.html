@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header>
+            <h1>John Doe</h1>
+            <p>Full-Stack Developer & Designer</p>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="form-no-js.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Get in Touch</h2>
+            <p>Have a project in mind or want to collaborate? Fill out the form below and I'll get back to you soon.</p>
+            <p class="form-instructions">
+                <strong>Note:</strong> All fields are required. Names can be up to 100 characters, and comments must be between 10 and 1,000 characters.
+            </p>
+
+            <form action="https://httpbin.org/post" method="post" novalidate>
+                <div class="form-group">
+                    <label for="name">Name <span class="required-indicator" aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" autocomplete="name" minlength="1" maxlength="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required-indicator" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comments / Message <span class="required-indicator" aria-hidden="true">*</span></label>
+                    <textarea id="comments" name="comments" rows="5" minlength="10" maxlength="1000" required></textarea>
+                </div>
+
+                <!-- Hidden bot-detection demonstration field -->
+                <input type="hidden" name="possible_bot" value="true">
+
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 John Doe. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
